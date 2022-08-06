@@ -4,23 +4,19 @@ class Person():
         self.age=age
 
     def Display(self):
-        print(f"the name is {self.name}")
-        print(f"the name is {self.age}")
+        print(f"The name of the person is{self.name}")
+        print(f"The age of the person is{self.age}")
 
-class Student():
+class Student(Person):
     def __init__(self,name,age,section):
         self.section=section
-        self.name = name
-        self.age = age
+        #Person.__init__(name,age);
+        super().__init__(name,age);
+
     def Display_student(self):
-        print(f"the name is {self.name}")
-        print(f"the name is {self.age}")
+        a=self.Display()
+        print(f"The section is{self.section}")
 
-        print(f"the name is {self.section}")
+b=Student("Ram",16,"B")
+b.Display_student()
 
-student=Person("Ravi kumar",28)
-student.Display()
-print("*******************************")
-
-my=Student("L",9,"M")
-my.Display_student()
